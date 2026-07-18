@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para Coni 💖</title>
+  <title>Para Coni, con todo mi amor 💫</title>
   <style>
     * {
       margin: 0;
@@ -16,43 +16,77 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Segoe UI', 'Quicksand', system-ui, sans-serif;
-      background: linear-gradient(145deg, #ffe9f4 0%, #ffd9e8 100%);
+      font-family: 'Segoe UI', 'Quicksand', 'Georgia', serif;
+      background: linear-gradient(145deg, #fce4ec 0%, #f8bbd0 40%, #f48fb1 100%);
       padding: 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Fondo con estrellas sutiles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, #ffffff55, transparent),
+        radial-gradient(2px 2px at 40px 70px, #ffffff44, transparent),
+        radial-gradient(2px 2px at 50px 160px, #ffffff66, transparent),
+        radial-gradient(2px 2px at 90px 40px, #ffffff55, transparent),
+        radial-gradient(2px 2px at 130px 80px, #ffffff44, transparent),
+        radial-gradient(2px 2px at 160px 30px, #ffffff66, transparent);
+      background-size: 200px 200px;
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .card {
-      max-width: 720px;
+      max-width: 820px;
       width: 100%;
-      background: rgba(255, 245, 248, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 3.5rem 3.5rem 3.5rem 0.5rem;
-      box-shadow: 0 25px 50px -10px rgba(200, 80, 120, 0.3),
-                  inset 0 1px 2px rgba(255, 255, 255, 0.7);
-      padding: 2.5rem 2.2rem;
+      background: rgba(255, 245, 248, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 4rem 4rem 4rem 1rem;
+      box-shadow: 0 40px 80px -15px rgba(150, 50, 80, 0.4),
+                  inset 0 1px 3px rgba(255, 255, 255, 0.8);
+      padding: 3rem 2.8rem;
       text-align: center;
-      transition: all 0.25s ease;
+      position: relative;
+      z-index: 1;
       border: 1px solid rgba(255, 220, 235, 0.5);
+      transition: all 0.3s ease;
     }
 
-    /* decoración de esquina */
+    /* decoración romántica */
     .card::before {
-      content: "🌸";
+      content: "🌙";
+      position: absolute;
+      font-size: 3.5rem;
+      opacity: 0.15;
+      left: 1rem;
+      top: 0.5rem;
+      transform: rotate(-10deg);
+    }
+    .card::after {
+      content: "⭐";
       position: absolute;
       font-size: 2.8rem;
-      opacity: 0.2;
-      transform: rotate(-15deg);
-      left: 0.5rem;
-      top: 0.5rem;
+      opacity: 0.12;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      transform: rotate(15deg);
     }
 
-    h1 {
-      font-size: 3.2rem;
+    .titulo {
+      font-size: 3.6rem;
       font-weight: 700;
-      color: #9f4b6e;
+      color: #7a2e4e;
       letter-spacing: -0.02em;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -60,37 +94,102 @@
       gap: 0.3rem 0.8rem;
     }
 
-    h1 .name {
-      background: #ffd1e0;
-      padding: 0.1rem 1.2rem;
-      border-radius: 60px;
+    .titulo .name {
+      background: linear-gradient(135deg, #f8a5c2, #e5738a);
+      padding: 0.1rem 1.8rem;
+      border-radius: 80px;
       display: inline-block;
-      box-shadow: 0 4px 8px rgba(200, 80, 120, 0.15);
+      box-shadow: 0 6px 20px rgba(200, 80, 120, 0.25);
+      color: white;
+      text-shadow: 0 2px 8px rgba(120, 30, 60, 0.3);
+    }
+
+    .subtitulo {
+      font-size: 1.3rem;
+      color: #8f4d6b;
+      background: rgba(255, 215, 230, 0.5);
+      display: inline-block;
+      padding: 0.4rem 2.2rem;
+      border-radius: 60px;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255, 200, 215, 0.6);
       backdrop-filter: blur(4px);
     }
 
-    .subtitle {
-      font-size: 1.2rem;
-      color: #b36283;
-      background: rgba(255, 215, 230, 0.5);
-      display: inline-block;
-      padding: 0.3rem 1.8rem;
-      border-radius: 40px;
+    .mensaje-especial {
+      font-size: 1.15rem;
+      color: #5d3a48;
+      background: rgba(255, 230, 240, 0.5);
+      padding: 1.2rem 1.8rem;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      border-left: 4px solid #f48fb1;
+      border-right: 4px solid #f48fb1;
+      font-style: italic;
+      font-weight: 400;
       backdrop-filter: blur(4px);
-      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 12px rgba(200, 80, 120, 0.08);
+    }
+
+    .planes {
+      background: rgba(255, 240, 245, 0.5);
+      backdrop-filter: blur(4px);
+      border-radius: 2.5rem;
+      padding: 1.8rem 1.8rem 1.2rem;
+      margin: 1.8rem 0;
+      border: 1px solid rgba(255, 200, 215, 0.4);
+    }
+
+    .planes-titulo {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #7a2e4e;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .planes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.8rem;
+      text-align: center;
+    }
+
+    .plan-item {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 0.8rem 0.5rem;
+      border-radius: 60px;
+      font-size: 1.05rem;
+      color: #4d2e3b;
       font-weight: 500;
-      letter-spacing: 0.3px;
-      border: 1px solid rgba(255, 200, 215, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 2px 8px rgba(200, 80, 120, 0.08);
+      transition: 0.2s;
+      backdrop-filter: blur(2px);
+    }
+
+    .plan-item:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 6px 16px rgba(200, 80, 120, 0.15);
+    }
+
+    .plan-item .emoji {
+      display: block;
+      font-size: 1.8rem;
+      margin-bottom: 0.2rem;
     }
 
     .razones-container {
-      background: rgba(255, 240, 245, 0.5);
+      background: rgba(255, 240, 245, 0.4);
       backdrop-filter: blur(4px);
       border-radius: 2.5rem;
       padding: 1.8rem 1.5rem;
       margin: 1.8rem 0;
-      border: 1px solid rgba(255, 200, 215, 0.5);
-      box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 200, 215, 0.4);
     }
 
     .razones {
@@ -98,90 +197,130 @@
       text-align: left;
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 0.8rem;
     }
 
     .razones li {
-      font-size: 1.15rem;
-      padding: 0.5rem 0.8rem 0.5rem 2.8rem;
+      font-size: 1.1rem;
+      padding: 0.6rem 1rem 0.6rem 3rem;
       background: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(2px);
-      border-radius: 40px;
+      border-radius: 60px;
       color: #4d2e3b;
       font-weight: 500;
-      box-shadow: 0 2px 6px rgba(200, 80, 120, 0.08);
-      transition: 0.2s;
+      box-shadow: 0 2px 6px rgba(200, 80, 120, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.6);
       position: relative;
+      transition: 0.15s;
+    }
+
+    .razones li:hover {
+      background: rgba(255, 255, 255, 0.75);
+      transform: scale(1.01);
     }
 
     .razones li::before {
       content: "💗";
       position: absolute;
-      left: 0.8rem;
-      top: 0.45rem;
+      left: 1rem;
+      top: 0.55rem;
       font-size: 1.3rem;
     }
 
-    .razones li:nth-child(2)::before { content: "✨"; }
-    .razones li:nth-child(3)::before { content: "🌷"; }
-    .razones li:nth-child(4)::before { content: "☀️"; }
-    .razones li:nth-child(5)::before { content: "🍬"; }
-    .razones li:nth-child(6)::before { content: "🧸"; }
-    .razones li:nth-child(7)::before { content: "🌸"; }
+    .razones li:nth-child(2)::before { content: "🌊"; }
+    .razones li:nth-child(3)::before { content: "🍦"; }
+    .razones li:nth-child(4)::before { content: "🌅"; }
+    .razones li:nth-child(5)::before { content: "✈️"; }
+    .razones li:nth-child(6)::before { content: "🌺"; }
+    .razones li:nth-child(7)::before { content: "🎵"; }
+    .razones li:nth-child(8)::before { content: "☕"; }
+    .razones li:nth-child(9)::before { content: "🌌"; }
 
     .contador {
       margin: 1.8rem 0 1.2rem;
-      font-size: 1.2rem;
-      background: #ffe2ed;
-      padding: 0.6rem 1.5rem;
-      border-radius: 60px;
+      font-size: 1.25rem;
+      background: linear-gradient(135deg, #ffe2ed, #ffd1e0);
+      padding: 0.7rem 2rem;
+      border-radius: 80px;
       display: inline-block;
-      backdrop-filter: blur(4px);
-      border: 1px solid #ffc1d6;
-      color: #792f4e;
+      border: 1px solid #ffb8d0;
+      color: #692a47;
       font-weight: 600;
-      box-shadow: 0 4px 10px rgba(200, 80, 120, 0.1);
+      box-shadow: 0 4px 16px rgba(200, 80, 120, 0.15);
     }
 
     .contador span {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
       color: #b34167;
-      margin: 0 4px;
+      margin: 0 6px;
+      display: inline-block;
     }
 
     .boton-corazon {
-      background: #ffb3cb;
+      background: linear-gradient(135deg, #f8a5c2, #e5738a);
       border: none;
-      color: #4d1f31;
+      color: white;
       font-size: 1.25rem;
       font-weight: 600;
-      padding: 0.9rem 2.5rem;
+      padding: 1rem 3rem;
       border-radius: 80px;
-      backdrop-filter: blur(4px);
-      background: rgba(255, 180, 200, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 8px 20px rgba(200, 80, 120, 0.2);
+      box-shadow: 0 8px 28px rgba(200, 80, 120, 0.35);
       cursor: pointer;
-      transition: 0.25s ease;
+      transition: 0.3s ease;
       display: inline-flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 1rem;
       margin-top: 0.5rem;
+      text-shadow: 0 2px 8px rgba(120, 30, 60, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .boton-corazon::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+      animation: girar 8s linear infinite;
+    }
+
+    @keyframes girar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .boton-corazon:hover {
-      transform: scale(1.04) translateY(-3px);
-      background: #ffa5c2;
-      box-shadow: 0 14px 28px rgba(200, 80, 120, 0.3);
-      border-color: #ff8fb2;
+      transform: scale(1.06) translateY(-4px);
+      box-shadow: 0 14px 40px rgba(200, 80, 120, 0.45);
+      background: linear-gradient(135deg, #f48fb1, #d4687e);
     }
 
     .boton-corazon:active {
-      transform: scale(0.96);
+      transform: scale(0.94);
     }
 
+    .frase-final {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #7a3d58;
+      letter-spacing: 0.3px;
+      border-top: 2px dashed #f8bbd0;
+      padding-top: 1.5rem;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+
+    .frase-final span {
+      font-weight: 600;
+      color: #b34167;
+    }
+
+    /* corazones flotantes mejorados */
     .corazones-flotantes {
       position: fixed;
       top: 0;
@@ -195,96 +334,146 @@
 
     .corazoncito {
       position: absolute;
+      animation: flotar 4s ease-out forwards;
+      opacity: 0.9;
+      filter: drop-shadow(0 6px 16px rgba(200, 80, 120, 0.25));
       font-size: 2rem;
-      animation: subir 3s ease-out forwards;
-      opacity: 0.8;
-      filter: drop-shadow(0 4px 8px rgba(200, 80, 120, 0.2));
     }
 
-    @keyframes subir {
+    @keyframes flotar {
       0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.3) rotate(0deg);
+      }
+      15% {
         opacity: 1;
-        transform: translateY(0) scale(0.5) rotate(0deg);
+        transform: translateY(0px) scale(1) rotate(5deg);
+      }
+      85% {
+        opacity: 0.9;
       }
       100% {
         opacity: 0;
-        transform: translateY(-180px) scale(1.4) rotate(30deg);
+        transform: translateY(-250px) scale(1.2) rotate(25deg);
       }
     }
 
-    .footer-cite {
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      color: #a75979;
-      letter-spacing: 0.3px;
-      border-top: 1px dashed #ffc1d6;
-      padding-top: 1.5rem;
-      opacity: 0.8;
-      font-weight: 400;
+    /* corazones pulsantes en el fondo (decoración) */
+    .corazon-fondo {
+      position: fixed;
+      font-size: 4rem;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+      animation: pulso 6s ease-in-out infinite;
     }
 
-    .footer-cite span {
-      font-weight: 600;
-      color: #7d3d57;
+    @keyframes pulso {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.04; }
+      50% { transform: scale(1.3) rotate(10deg); opacity: 0.08; }
     }
 
-    /* responsive */
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .card {
-        padding: 1.8rem 1.2rem;
+        padding: 2rem 1.2rem;
         border-radius: 2.5rem 2.5rem 2.5rem 0.5rem;
       }
-      h1 {
+      .titulo {
         font-size: 2.6rem;
+      }
+      .planes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+      }
+      .plan-item {
+        font-size: 0.95rem;
+        padding: 0.6rem 0.3rem;
       }
       .razones li {
         font-size: 1rem;
-        padding: 0.45rem 0.8rem 0.45rem 2.6rem;
+        padding: 0.5rem 0.8rem 0.5rem 2.8rem;
+      }
+      .razones li::before {
+        left: 0.8rem;
+        top: 0.5rem;
+        font-size: 1.1rem;
       }
       .boton-corazon {
         font-size: 1rem;
-        padding: 0.7rem 1.8rem;
+        padding: 0.8rem 2rem;
+        gap: 0.6rem;
+      }
+      .mensaje-especial {
+        font-size: 1rem;
+        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- contenedor de corazones que aparecen al hacer click -->
+  <!-- corazones decorativos de fondo -->
+  <div class="corazon-fondo" style="left:5%; top:10%;">❤️</div>
+  <div class="corazon-fondo" style="right:8%; bottom:15%;">💖</div>
+  <div class="corazon-fondo" style="left:15%; bottom:30%;">💗</div>
+  <div class="corazon-fondo" style="right:20%; top:25%;">💕</div>
+
   <div class="corazones-flotantes" id="corazonesContainer"></div>
 
   <div class="card">
-    <h1>
+    <h1 class="titulo">
       <span>Para</span>
       <span class="name">Coni</span>
-      <span>💕</span>
+      <span>💫</span>
     </h1>
-    <div class="subtitle">✨ mi persona favorita ✨</div>
+    <div class="subtitulo">✨ eres mi persona favorita en el universo ✨</div>
+
+    <div class="mensaje-especial">
+      "Cada vez que pienso en ti, el mundo se vuelve más bonito.<br>
+      No sé qué hice para merecerte, pero quiero hacerte feliz<br>
+      <strong>siempre</strong>."
+    </div>
+
+    <!-- Planes soñados juntos -->
+    <div class="planes">
+      <div class="planes-titulo">🌅 Cosas que sueño hacer contigo</div>
+      <div class="planes-grid">
+        <div class="plan-item"><span class="emoji">🏖️</span> Ir a la playa</div>
+        <div class="plan-item"><span class="emoji">🍦</span> Comer helado</div>
+        <div class="plan-item"><span class="emoji">🌄</span> Ver el atardecer</div>
+        <div class="plan-item"><span class="emoji">✈️</span> Viajar juntos</div>
+        <div class="plan-item"><span class="emoji">🌊</span> Caminar por la orilla</div>
+        <div class="plan-item"><span class="emoji">☕</span> Café en la mañana</div>
+        <div class="plan-item"><span class="emoji">🎵</span> Bailar bajo la lluvia</div>
+        <div class="plan-item"><span class="emoji">🌌</span> Ver las estrellas</div>
+      </div>
+    </div>
 
     <div class="razones-container">
       <ul class="razones">
-        <li>Tu sonrisa ilumina mi día entero</li>
-        <li>Eres la persona más linda  que conozco</li>
-        <li>Me haces sentir mariposas sin hacer nada</li>
-        <li>Tu voz es mi canción favorita</li>
-        <li>Eres increíblemente especial</li>
-        <li>Cada mensaje tuyo me hace feliz</li>
-        <li>Simplemente eres tú, y eso es perfecto</li>
+        <li>Tu sonrisa es mi lugar favorito en el mundo</li>
+        <li>Quiero construir castillos de arena contigo</li>
+        <li>Compartir un helado y reírnos sin motivo</li>
+        <li>Ver el sol esconderse entre tus ojos</li>
+        <li>Recorrer el mundo contigo de la mano</li>
+        <li>Tu risa es mi melodía preferida</li>
+        <li>Eres el sueño del que no quiero despertar</li>
+        <li>Tomar café y mirarnos en silencio</li>
+        <li>Eres mi razón para sonreír cada día</li>
       </ul>
     </div>
 
-    <!-- contador de razones -->
     <div class="contador">
-      💖 <span id="contadorRazones">7</span> razones para quererte
+      💖 <span id="contadorRazones">9</span> razones para amarte
     </div>
 
-    <!-- botón interactivo -->
     <button class="boton-corazon" id="botonCorazon">
-      <span>💗</span> Enviar un corazón <span>💗</span>
+      <span>💗</span> Envíale un corazón <span>💗</span>
     </button>
 
-    <div class="footer-cite">
-      <span>Coni</span> · cada día me gustas más 🌷
+    <div class="frase-final">
+      <span>Coni</span>, cada día que pasa me gustas más.<br>
+      Eres mi <span>casi algo</span> favorito, y quiero que seas mi <span>todo</span>. 🌹
     </div>
   </div>
 
@@ -294,101 +483,135 @@
       const boton = document.getElementById('botonCorazon');
       const container = document.getElementById('corazonesContainer');
 
-      let contador = 7;
+      let contador = 9;
 
-      // función para lanzar corazones
-      function lanzarCorazones() {
-        const emojis = ['❤️', '💖', '💗', '✨', '🌸', '💕', '🌷', '🧡', '💛', '🩷'];
-        const cantidad = 8 + Math.floor(Math.random() * 12); // entre 8 y 20
+      // función para crear corazones con animación más linda
+      function lanzarCorazones(cantidad = null) {
+        const emojis = ['❤️', '💖', '💗', '💕', '✨', '🌹', '🌷', '💘', '♥️', '💝'];
+        const cantidadFinal = cantidad || (8 + Math.floor(Math.random() * 15));
 
-        for (let i = 0; i < cantidad; i++) {
+        for (let i = 0; i < cantidadFinal; i++) {
           const corazon = document.createElement('div');
           corazon.className = 'corazoncito';
-          // elegir emoji aleatorio
+          
+          // elegir emoji
           const emoji = emojis[Math.floor(Math.random() * emojis.length)];
           corazon.textContent = emoji;
 
-          // tamaño aleatorio
-          const size = 1.2 + Math.random() * 2.0;
+          // tamaño variado
+          const size = 1.5 + Math.random() * 2.5;
           corazon.style.fontSize = `${size}rem`;
 
-          // posición aleatoria (ancho de pantalla)
-          const left = Math.random() * 100;
+          // posición horizontal aleatoria
+          const left = 5 + Math.random() * 90;
           corazon.style.left = `${left}%`;
-          corazon.style.top = `${70 + Math.random() * 30}%`; // desde la parte inferior
+          corazon.style.top = `${60 + Math.random() * 35}%`;
 
-          // rotación y duración aleatoria
-          const duracion = 2.5 + Math.random() * 2.5;
+          // duración aleatoria
+          const duracion = 3 + Math.random() * 3;
           corazon.style.animationDuration = `${duracion}s`;
-          corazon.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
+
+          // rotación inicial
+          const rotacion = Math.random() * 40 - 20;
+          corazon.style.transform = `rotate(${rotacion}deg)`;
 
           container.appendChild(corazon);
 
-          // eliminar después de la animación
           setTimeout(() => {
             if (corazon.parentNode) corazon.remove();
-          }, duracion * 1000 + 100);
+          }, duracion * 1000 + 200);
         }
       }
 
-      // función para aumentar el contador
+      // función para aumentar contador con efecto bonito
       function aumentarContador() {
         contador += 1;
         contadorSpan.textContent = contador;
 
-        // efecto sutil de "saltito" en el contador
-        contadorSpan.style.transition = 'transform 0.15s ease';
-        contadorSpan.style.transform = 'scale(1.5)';
+        // efecto de "latido"
+        contadorSpan.style.transition = 'transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55)';
+        contadorSpan.style.transform = 'scale(1.8)';
         setTimeout(() => {
           contadorSpan.style.transform = 'scale(1)';
-        }, 150);
+        }, 250);
 
-        // también lanzamos corazones al aumentar
-        lanzarCorazones();
+        // lanzar corazones extra
+        lanzarCorazones(12 + Math.floor(Math.random() * 10));
       }
 
       // evento del botón
       boton.addEventListener('click', function(e) {
-        // efecto de click
+        e.stopPropagation();
+        
+        // efecto de presión
         this.style.transform = 'scale(0.92)';
         setTimeout(() => {
           this.style.transform = '';
-        }, 180);
+        }, 200);
 
         aumentarContador();
-
-        // lanzar corazones extra
-        lanzarCorazones();
+        lanzarCorazones(10 + Math.floor(Math.random() * 12));
       });
 
-      // también al hacer click en cualquier parte de la card (opcional, pero divertido)
-      // solo si no se hace click en el botón (para no duplicar)
+      // clic en la tarjeta también lanza corazones (pero sin aumentar contador)
       const card = document.querySelector('.card');
       card.addEventListener('click', function(e) {
-        // si el click fue en el botón, ya lo manejamos arriba
         if (e.target.closest('#botonCorazon')) return;
-        // si fue en algún li o texto, igual lanzamos corazones pero sin aumentar contador
-        lanzarCorazones();
+        if (e.target.closest('.plan-item')) {
+          // si hace click en un plan, lanza muchos corazones
+          lanzarCorazones(20);
+          return;
+        }
+        lanzarCorazones(8 + Math.floor(Math.random() * 10));
       });
 
-      // lanzar algunos corazones al cargar la página (efecto bienvenida)
+      // clic en los planes también
+      document.querySelectorAll('.plan-item').forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.stopPropagation();
+          lanzarCorazones(18 + Math.floor(Math.random() * 12));
+          // cambio sutil de color
+          this.style.transition = 'background 0.3s';
+          this.style.background = 'rgba(255, 200, 215, 0.6)';
+          setTimeout(() => {
+            this.style.background = '';
+          }, 400);
+        });
+      });
+
+      // corazones al cargar
       window.addEventListener('load', function() {
         setTimeout(() => {
-          lanzarCorazones();
-          lanzarCorazones();
-        }, 300);
+          lanzarCorazones(15);
+          setTimeout(() => lanzarCorazones(12), 600);
+        }, 400);
       });
 
-      // también cada cierto tiempo (para mantener la magia) cada 15s
+      // cada 12 segundos, una lluvia suave (si la página está visible)
       setInterval(() => {
-        // solo si la página está visible
         if (!document.hidden) {
-          lanzarCorazones();
+          lanzarCorazones(5 + Math.floor(Math.random() * 8));
         }
-      }, 15000);
+      }, 12000);
 
-      // ajuste para que el contador no se pase de 999 (por si acaso)
-      // pero es solo estético, no hay límite real
+      // efecto extra: al pasar el mouse por los planes
+      document.querySelectorAll('.plan-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          // pequeño corazón que aparece
+          const miniCorazon = document.createElement('div');
+          miniCorazon.className = 'corazoncito';
+          miniCorazon.textContent = '💗';
+          miniCorazon.style.fontSize = '1.5rem';
+          miniCorazon.style.left = (Math.random() * 80 + 10) + '%';
+          miniCorazon.style.top = (Math.random() * 60 + 20) + '%';
+          miniCorazon.style.animationDuration = '2.5s';
+          container.appendChild(miniCorazon);
+          setTimeout(() => {
+            if (miniCorazon.parentNode) miniCorazon.remove();
+          }, 2800);
+        });
+      });
+
     })();
   </script>
 </body>
