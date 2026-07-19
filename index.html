@@ -1,618 +1,451 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para Coni, con todo mi amor 💫</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Para Coni · De Juan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Segoe UI', 'Quicksand', 'Georgia', serif;
-      background: linear-gradient(145deg, #fce4ec 0%, #f8bbd0 40%, #f48fb1 100%);
-      padding: 1.5rem;
-      position: relative;
-      overflow-x: hidden;
-    }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #2c1810;
+            background-image: 
+                radial-gradient(ellipse at 30% 40%, #3d241a 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 60%, #3d241a 0%, transparent 60%),
+                linear-gradient(180deg, #2c1810 0%, #1a0e0a 100%);
+            padding: 1.5rem;
+            min-height: 100vh;
+        }
 
-    /* Fondo con estrellas sutiles */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        radial-gradient(2px 2px at 20px 30px, #ffffff55, transparent),
-        radial-gradient(2px 2px at 40px 70px, #ffffff44, transparent),
-        radial-gradient(2px 2px at 50px 160px, #ffffff66, transparent),
-        radial-gradient(2px 2px at 90px 40px, #ffffff55, transparent),
-        radial-gradient(2px 2px at 130px 80px, #ffffff44, transparent),
-        radial-gradient(2px 2px at 160px 30px, #ffffff66, transparent);
-      background-size: 200px 200px;
-      opacity: 0.5;
-      pointer-events: none;
-      z-index: 0;
-    }
+        .carta-container {
+            max-width: 700px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            perspective: 1500px;
+        }
 
-    .card {
-      max-width: 820px;
-      width: 100%;
-      background: rgba(255, 245, 248, 0.82);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 4rem 4rem 4rem 1rem;
-      box-shadow: 0 40px 80px -15px rgba(150, 50, 80, 0.4),
-                  inset 0 1px 3px rgba(255, 255, 255, 0.8);
-      padding: 3rem 2.8rem;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-      border: 1px solid rgba(255, 220, 235, 0.5);
-      transition: all 0.3s ease;
-    }
+        /* El sobre */
+        .sobre {
+            background: #e8d5c4;
+            background-image: 
+                linear-gradient(135deg, #dcc9b8 0%, #e8d5c4 40%, #f0dfd0 100%);
+            border-radius: 20px 20px 10px 10px;
+            padding: 2.5rem 2rem;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 
+                        0 10px 20px rgba(0, 0, 0, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid #d4b8a0;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    /* decoración romántica */
-    .card::before {
-      content: "🌙";
-      position: absolute;
-      font-size: 3.5rem;
-      opacity: 0.15;
-      left: 1rem;
-      top: 0.5rem;
-      transform: rotate(-10deg);
-    }
-    .card::after {
-      content: "⭐";
-      position: absolute;
-      font-size: 2.8rem;
-      opacity: 0.12;
-      right: 1.5rem;
-      bottom: 1.5rem;
-      transform: rotate(15deg);
-    }
+        .sobre::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 180px solid transparent;
+            border-right: 180px solid transparent;
+            border-top: 70px solid #e8d5c4;
+            filter: drop-shadow(0 -5px 10px rgba(0, 0, 0, 0.1));
+            transition: all 0.8s ease;
+            z-index: 2;
+        }
 
-    .titulo {
-      font-size: 3.6rem;
-      font-weight: 700;
-      color: #7a2e4e;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.3rem 0.8rem;
-    }
+        .sobre::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 160px solid transparent;
+            border-right: 160px solid transparent;
+            border-top: 60px solid #f0dfd0;
+            z-index: 1;
+            transition: all 0.8s ease;
+        }
 
-    .titulo .name {
-      background: linear-gradient(135deg, #f8a5c2, #e5738a);
-      padding: 0.1rem 1.8rem;
-      border-radius: 80px;
-      display: inline-block;
-      box-shadow: 0 6px 20px rgba(200, 80, 120, 0.25);
-      color: white;
-      text-shadow: 0 2px 8px rgba(120, 30, 60, 0.3);
-    }
+        .sobre-abierto::before {
+            transform: translateX(-50%) rotateX(180deg);
+            border-top-color: #dcc9b8;
+        }
 
-    .subtitulo {
-      font-size: 1.3rem;
-      color: #8f4d6b;
-      background: rgba(255, 215, 230, 0.5);
-      display: inline-block;
-      padding: 0.4rem 2.2rem;
-      border-radius: 60px;
-      margin-bottom: 2rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      border: 1px solid rgba(255, 200, 215, 0.6);
-      backdrop-filter: blur(4px);
-    }
+        .sobre-abierto::after {
+            transform: translateX(-50%) rotateX(180deg);
+            border-top-color: #e8d5c4;
+        }
 
-    .mensaje-especial {
-      font-size: 1.15rem;
-      color: #5d3a48;
-      background: rgba(255, 230, 240, 0.5);
-      padding: 1.2rem 1.8rem;
-      border-radius: 2rem;
-      margin-bottom: 2rem;
-      line-height: 1.8;
-      border-left: 4px solid #f48fb1;
-      border-right: 4px solid #f48fb1;
-      font-style: italic;
-      font-weight: 400;
-      backdrop-filter: blur(4px);
-      box-shadow: 0 4px 12px rgba(200, 80, 120, 0.08);
-    }
+        /* Sello del sobre */
+        .sello {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.8rem;
+            z-index: 3;
+            filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.2));
+            transition: all 0.8s ease;
+        }
 
-    .planes {
-      background: rgba(255, 240, 245, 0.5);
-      backdrop-filter: blur(4px);
-      border-radius: 2.5rem;
-      padding: 1.8rem 1.8rem 1.2rem;
-      margin: 1.8rem 0;
-      border: 1px solid rgba(255, 200, 215, 0.4);
-    }
+        .sobre-abierto .sello {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0) rotate(180deg);
+        }
 
-    .planes-titulo {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #7a2e4e;
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.5px;
-    }
+        .texto-sobre {
+            font-family: 'Georgia', serif;
+            color: #8b6b5a;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            z-index: 0;
+            margin-top: 1.5rem;
+            font-weight: 300;
+        }
 
-    .planes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 0.8rem;
-      text-align: center;
-    }
+        .texto-sobre span {
+            display: block;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+            letter-spacing: 4px;
+            font-weight: 200;
+            color: #a08070;
+        }
 
-    .plan-item {
-      background: rgba(255, 255, 255, 0.6);
-      padding: 0.8rem 0.5rem;
-      border-radius: 60px;
-      font-size: 1.05rem;
-      color: #4d2e3b;
-      font-weight: 500;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 2px 8px rgba(200, 80, 120, 0.08);
-      transition: 0.2s;
-      backdrop-filter: blur(2px);
-    }
+        /* La carta */
+        .carta-contenido {
+            background: #fcf3eb;
+            background-image: 
+                linear-gradient(180deg, #fcf3eb 0%, #f5e8dd 100%);
+            border-radius: 15px;
+            padding: 2.8rem 2.5rem;
+            margin-top: -50px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid #e8d5c4;
+            position: relative;
+        }
 
-    .plan-item:hover {
-      transform: translateY(-3px);
-      background: rgba(255, 255, 255, 0.85);
-      box-shadow: 0 6px 16px rgba(200, 80, 120, 0.15);
-    }
+        .carta-contenido.visible {
+            opacity: 1;
+            max-height: 3500px;
+            padding: 2.8rem 2.5rem;
+            margin-top: -10px;
+        }
 
-    .plan-item .emoji {
-      display: block;
-      font-size: 1.8rem;
-      margin-bottom: 0.2rem;
-    }
+        /* Decoración sutil */
+        .carta-contenido::before {
+            content: '✧';
+            position: absolute;
+            top: 1.2rem;
+            right: 1.8rem;
+            font-size: 1.4rem;
+            opacity: 0.15;
+            color: #8a7a6a;
+        }
 
-    .razones-container {
-      background: rgba(255, 240, 245, 0.4);
-      backdrop-filter: blur(4px);
-      border-radius: 2.5rem;
-      padding: 1.8rem 1.5rem;
-      margin: 1.8rem 0;
-      border: 1px solid rgba(255, 200, 215, 0.4);
-    }
+        .carta-contenido::after {
+            content: '✧';
+            position: absolute;
+            bottom: 1.2rem;
+            left: 1.8rem;
+            font-size: 1.4rem;
+            opacity: 0.15;
+            color: #8a7a6a;
+        }
 
-    .razones {
-      list-style: none;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
+        /* Estilos del contenido */
+        .fecha {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #8a7a6a;
+            font-style: italic;
+            margin-bottom: 1.8rem;
+            letter-spacing: 0.5px;
+        }
 
-    .razones li {
-      font-size: 1.1rem;
-      padding: 0.6rem 1rem 0.6rem 3rem;
-      background: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(2px);
-      border-radius: 60px;
-      color: #4d2e3b;
-      font-weight: 500;
-      box-shadow: 0 2px 6px rgba(200, 80, 120, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      position: relative;
-      transition: 0.15s;
-    }
+        .remitente {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #a08070;
+            letter-spacing: 2px;
+            margin-bottom: 1.8rem;
+            padding: 0.5rem;
+            border-top: 1px dashed #d4b8a0;
+            border-bottom: 1px dashed #d4b8a0;
+            font-weight: 300;
+        }
 
-    .razones li:hover {
-      background: rgba(255, 255, 255, 0.75);
-      transform: scale(1.01);
-    }
+        .remitente strong {
+            color: #8b6b5a;
+            font-weight: 600;
+        }
 
-    .razones li::before {
-      content: "💗";
-      position: absolute;
-      left: 1rem;
-      top: 0.55rem;
-      font-size: 1.3rem;
-    }
+        .saludo {
+            font-size: 1.2rem;
+            color: #3d2c1f;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
 
-    .razones li:nth-child(2)::before { content: "🌊"; }
-    .razones li:nth-child(3)::before { content: "🍦"; }
-    .razones li:nth-child(4)::before { content: "🌅"; }
-    .razones li:nth-child(5)::before { content: "✈️"; }
-    .razones li:nth-child(6)::before { content: "🌺"; }
-    .razones li:nth-child(7)::before { content: "🎵"; }
-    .razones li:nth-child(8)::before { content: "☕"; }
-    .razones li:nth-child(9)::before { content: "🌌"; }
+        .saludo span {
+            color: #8b3a2a;
+        }
 
-    .contador {
-      margin: 1.8rem 0 1.2rem;
-      font-size: 1.25rem;
-      background: linear-gradient(135deg, #ffe2ed, #ffd1e0);
-      padding: 0.7rem 2rem;
-      border-radius: 80px;
-      display: inline-block;
-      border: 1px solid #ffb8d0;
-      color: #692a47;
-      font-weight: 600;
-      box-shadow: 0 4px 16px rgba(200, 80, 120, 0.15);
-    }
+        .cuerpo-carta {
+            font-size: 1.05rem;
+            line-height: 2;
+            color: #3d2c1f;
+            margin: 1.2rem 0;
+        }
 
-    .contador span {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #b34167;
-      margin: 0 6px;
-      display: inline-block;
-    }
+        .cuerpo-carta p {
+            margin-bottom: 1.2rem;
+            text-indent: 2rem;
+        }
 
-    .boton-corazon {
-      background: linear-gradient(135deg, #f8a5c2, #e5738a);
-      border: none;
-      color: white;
-      font-size: 1.25rem;
-      font-weight: 600;
-      padding: 1rem 3rem;
-      border-radius: 80px;
-      box-shadow: 0 8px 28px rgba(200, 80, 120, 0.35);
-      cursor: pointer;
-      transition: 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 0.5rem;
-      text-shadow: 0 2px 8px rgba(120, 30, 60, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
+        .cuerpo-carta p:last-of-type {
+            margin-bottom: 0;
+        }
 
-    .boton-corazon::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
-      animation: girar 8s linear infinite;
-    }
+        .cuerpo-carta .recuerdo {
+            background: rgba(232, 213, 196, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            font-style: italic;
+            color: #6b4a3a;
+        }
 
-    @keyframes girar {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+        .despedida {
+            text-align: right;
+            font-size: 1.1rem;
+            color: #3d2c1f;
+            margin-top: 2rem;
+            font-weight: 400;
+        }
 
-    .boton-corazon:hover {
-      transform: scale(1.06) translateY(-4px);
-      box-shadow: 0 14px 40px rgba(200, 80, 120, 0.45);
-      background: linear-gradient(135deg, #f48fb1, #d4687e);
-    }
+        .despedida .nombre-juan {
+            font-size: 1.2rem;
+            color: #8b3a2a;
+            font-weight: 600;
+            display: block;
+            margin-top: 0.2rem;
+        }
 
-    .boton-corazon:active {
-      transform: scale(0.94);
-    }
+        .despedida .desde {
+            font-size: 0.8rem;
+            color: #8a7a6a;
+            font-weight: 300;
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
 
-    .frase-final {
-      margin-top: 2rem;
-      font-size: 1.1rem;
-      color: #7a3d58;
-      letter-spacing: 0.3px;
-      border-top: 2px dashed #f8bbd0;
-      padding-top: 1.5rem;
-      font-weight: 400;
-      line-height: 1.8;
-    }
+        /* Botón */
+        .boton-abrir {
+            background: transparent;
+            border: 2px solid #d4b8a0;
+            color: #8b6b5a;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            padding: 0.8rem 2.5rem;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin-top: 1.5rem;
+            letter-spacing: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            z-index: 4;
+            position: relative;
+        }
 
-    .frase-final span {
-      font-weight: 600;
-      color: #b34167;
-    }
+        .boton-abrir:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #8b3a2a;
+            color: #8b3a2a;
+            transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(139, 58, 42, 0.1);
+        }
 
-    /* corazones flotantes mejorados */
-    .corazones-flotantes {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 999;
-      overflow: hidden;
-    }
+        .boton-abrir:active {
+            transform: scale(0.95);
+        }
 
-    .corazoncito {
-      position: absolute;
-      animation: flotar 4s ease-out forwards;
-      opacity: 0.9;
-      filter: drop-shadow(0 6px 16px rgba(200, 80, 120, 0.25));
-      font-size: 2rem;
-    }
+        .boton-abrir.oculto {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
 
-    @keyframes flotar {
-      0% {
-        opacity: 0;
-        transform: translateY(20px) scale(0.3) rotate(0deg);
-      }
-      15% {
-        opacity: 1;
-        transform: translateY(0px) scale(1) rotate(5deg);
-      }
-      85% {
-        opacity: 0.9;
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-250px) scale(1.2) rotate(25deg);
-      }
-    }
+        /* Responsive */
+        @media (max-width: 600px) {
+            .sobre {
+                padding: 1.8rem 1.2rem;
+                min-height: 240px;
+            }
+            .sobre::before {
+                border-left-width: 120px;
+                border-right-width: 120px;
+                border-top-width: 55px;
+            }
+            .sobre::after {
+                border-left-width: 100px;
+                border-right-width: 100px;
+                border-top-width: 45px;
+            }
+            .carta-contenido {
+                padding: 1.8rem 1.2rem;
+            }
+            .carta-contenido.visible {
+                padding: 1.8rem 1.2rem;
+            }
+            .cuerpo-carta {
+                font-size: 0.95rem;
+                line-height: 1.8;
+            }
+            .texto-sobre {
+                font-size: 0.9rem;
+            }
+            .sello {
+                font-size: 2.2rem;
+            }
+        }
 
-    /* corazones pulsantes en el fondo (decoración) */
-    .corazon-fondo {
-      position: fixed;
-      font-size: 4rem;
-      opacity: 0.04;
-      pointer-events: none;
-      z-index: 0;
-      animation: pulso 6s ease-in-out infinite;
-    }
-
-    @keyframes pulso {
-      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.04; }
-      50% { transform: scale(1.3) rotate(10deg); opacity: 0.08; }
-    }
-
-    @media (max-width: 600px) {
-      .card {
-        padding: 2rem 1.2rem;
-        border-radius: 2.5rem 2.5rem 2.5rem 0.5rem;
-      }
-      .titulo {
-        font-size: 2.6rem;
-      }
-      .planes-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.6rem;
-      }
-      .plan-item {
-        font-size: 0.95rem;
-        padding: 0.6rem 0.3rem;
-      }
-      .razones li {
-        font-size: 1rem;
-        padding: 0.5rem 0.8rem 0.5rem 2.8rem;
-      }
-      .razones li::before {
-        left: 0.8rem;
-        top: 0.5rem;
-        font-size: 1.1rem;
-      }
-      .boton-corazon {
-        font-size: 1rem;
-        padding: 0.8rem 2rem;
-        gap: 0.6rem;
-      }
-      .mensaje-especial {
-        font-size: 1rem;
-        padding: 1rem;
-      }
-    }
-  </style>
+        @media (max-width: 400px) {
+            .sobre::before {
+                border-left-width: 80px;
+                border-right-width: 80px;
+                border-top-width: 40px;
+            }
+            .sobre::after {
+                border-left-width: 60px;
+                border-right-width: 60px;
+                border-top-width: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- corazones decorativos de fondo -->
-  <div class="corazon-fondo" style="left:5%; top:10%;">❤️</div>
-  <div class="corazon-fondo" style="right:8%; bottom:15%;">💖</div>
-  <div class="corazon-fondo" style="left:15%; bottom:30%;">💗</div>
-  <div class="corazon-fondo" style="right:20%; top:25%;">💕</div>
+    <div class="carta-container">
+        <!-- El sobre -->
+        <div class="sobre" id="sobre">
+            <div class="sello" id="sello">💌</div>
+            <div class="texto-sobre">
+                Para: <strong>Coni</strong>
+                <span>— haz clic pa' abrir —</span>
+            </div>
+            <button class="boton-abrir" id="botonAbrir">Abrir carta</button>
+        </div>
 
-  <div class="corazones-flotantes" id="corazonesContainer"></div>
+        <!-- La carta -->
+        <div class="carta-contenido" id="cartaContenido">
+            <div class="fecha">Santiago, 18 de julio de 2026</div>
 
-  <div class="card">
-    <h1 class="titulo">
-      <span>Para</span>
-      <span class="name">Coni</span>
-      <span>💫</span>
-    </h1>
-    <div class="subtitulo">✨ eres mi persona favorita en el universo ✨</div>
+            <div class="remitente">
+                ✦ Enviada desde mi casa pa' la tuya ✦
+            </div>
 
-    <div class="mensaje-especial">
-      "Cada vez que pienso en ti, el mundo se vuelve más bonito.<br>
-      No sé qué hice para merecerte, pero quiero hacerte feliz<br>
-      <strong>siempre</strong>."
+            <div class="saludo">
+                Hola <span>Coni</span>,
+            </div>
+
+            <div class="cuerpo-carta">
+                <p>
+                    No soy muy bueno para esto de escribir cartas, la verdad me cuesta un poco, pero quería sentarme a escribirte algo tranquilo, para que no se pierda entre tantos mensajes.
+                </p>
+
+                <p>
+                    No le voy a dar tantas vueltas: me gustas. Me gusta caleta cómo piensas, cómo ves la vida y, sobre todo, cómo te aguantas mis chistes fomes y te ríes igual. Valoro mucho que podamos estar en silencio sin que sea raro, esa confianza no se encuentra con cualquiera.
+                </p>
+
+                <p>
+                    Amo cuando hacemos llamada, aunque sea para no decir nada, solo escucharte respirar. Me encanta cuando nos reímos de weas sin sentido y se nos pasa la hora volando. Esas llamadas se han vuelto mi momento favorito del día.
+                </p>
+
+                <p>
+                    Y cómo olvidar cuando vimos la película de Michael Jackson en el cine. Verte emocionada con cada canción, cómo movías la cabeza al ritmo de <em>Billie Jean</em> y esa sonrisa que tenías cuando salió <em>Thriller</em>. Ese día me di cuenta de que no era solo una salida más, era un recuerdo que iba a guardar para siempre.
+                </p>
+
+                <p>
+                    Pero si hay un día que nunca se me va a olvidar, es el día que nos conocimos. Ese encuentro juvenil donde todo empezó. No sé si tú te acuerdas, pero yo sí. Cada detalle. Fue y será siempre mi día favorito. Porque ese día, sin saberlo, conocí a la persona que hoy me hace sentir tanto.
+                </p>
+
+                <p>
+                    No te voy a decir que eres perfecta ni nada de esas cosas cursis, pero sí sé que eres especial. Estar contigo me hace sentir súper bien, es como estar en mi lugar seguro. Y eso, para mí, vale un mundo.
+                </p>
+
+                <p>
+                    A veces me quedo pensando en planes a futuro, como irnos a la playa un finde, salir a cualquier parte o simplemente tomarnos un café un domingo sin que nadie nos moleste. No sé qué pasará después, pero me gusta imaginarlo. Y me gusta pensar que a ti también te pasa por la cabeza.
+                </p>
+
+                <p>
+                    No quiero meter presión ni ponerme intenso con expectativas raras; solo quería que supieras que me importas de verdad. Que cuando tú estás bien, el día me cambia completo, y si te pasa algo, me importa.
+                </p>
+            </div>
+
+            <div class="despedida">
+                Con cariño,
+                <span class="nombre-juan">Juan</span>
+                <span class="desde">✧ desde mi casa hasta la tuya ✧</span>
+            </div>
+        </div>
     </div>
 
-    <!-- Planes soñados juntos -->
-    <div class="planes">
-      <div class="planes-titulo">🌅 Cosas que sueño hacer contigo</div>
-      <div class="planes-grid">
-        <div class="plan-item"><span class="emoji">🏖️</span> Ir a la playa</div>
-        <div class="plan-item"><span class="emoji">🍦</span> Comer helado</div>
-        <div class="plan-item"><span class="emoji">🌄</span> Ver el atardecer</div>
-        <div class="plan-item"><span class="emoji">✈️</span> Viajar juntos</div>
-        <div class="plan-item"><span class="emoji">🌊</span> Caminar por la orilla</div>
-        <div class="plan-item"><span class="emoji">☕</span> Café en la mañana</div>
-        <div class="plan-item"><span class="emoji">🎵</span> Bailar bajo la lluvia</div>
-        <div class="plan-item"><span class="emoji">🌌</span> Ver las estrellas</div>
-      </div>
-    </div>
+    <script>
+        (function() {
+            const sobre = document.getElementById('sobre');
+            const botonAbrir = document.getElementById('botonAbrir');
+            const cartaContenido = document.getElementById('cartaContenido');
+            let abierta = false;
 
-    <div class="razones-container">
-      <ul class="razones">
-        <li>Tu sonrisa es mi lugar favorito en el mundo</li>
-        <li>Quiero construir castillos de arena contigo</li>
-        <li>Compartir un helado y reírnos sin motivo</li>
-        <li>Ver el sol esconderse entre tus ojos</li>
-        <li>Recorrer el mundo contigo de la mano</li>
-        <li>Tu risa es mi melodía preferida</li>
-        <li>Eres el sueño del que no quiero despertar</li>
-        <li>Tomar café y mirarnos en silencio</li>
-        <li>Eres mi razón para sonreír cada día</li>
-      </ul>
-    </div>
+            function abrirCarta() {
+                if (abierta) return;
+                abierta = true;
 
-    <div class="contador">
-      💖 <span id="contadorRazones">9</span> razones para amarte
-    </div>
+                sobre.classList.add('sobre-abierto');
+                botonAbrir.classList.add('oculto');
 
-    <button class="boton-corazon" id="botonCorazon">
-      <span>💗</span> Envíale un corazón <span>💗</span>
-    </button>
+                setTimeout(() => {
+                    cartaContenido.classList.add('visible');
+                }, 400);
+            }
 
-    <div class="frase-final">
-      <span>Coni</span>, cada día que pasa me gustas más.<br>
-      Eres mi <span>casi algo</span> favorito, y quiero que seas mi <span>todo</span>. 🌹
-    </div>
-  </div>
+            sobre.addEventListener('click', function(e) {
+                if (e.target.closest('.boton-abrir')) return;
+                abrirCarta();
+            });
 
-  <script>
-    (function() {
-      const contadorSpan = document.getElementById('contadorRazones');
-      const boton = document.getElementById('botonCorazon');
-      const container = document.getElementById('corazonesContainer');
+            botonAbrir.addEventListener('click', function(e) {
+                e.stopPropagation();
+                abrirCarta();
+            });
 
-      let contador = 9;
+        })();
+    </script>
 
-      // función para crear corazones con animación más linda
-      function lanzarCorazones(cantidad = null) {
-        const emojis = ['❤️', '💖', '💗', '💕', '✨', '🌹', '🌷', '💘', '♥️', '💝'];
-        const cantidadFinal = cantidad || (8 + Math.floor(Math.random() * 15));
-
-        for (let i = 0; i < cantidadFinal; i++) {
-          const corazon = document.createElement('div');
-          corazon.className = 'corazoncito';
-          
-          // elegir emoji
-          const emoji = emojis[Math.floor(Math.random() * emojis.length)];
-          corazon.textContent = emoji;
-
-          // tamaño variado
-          const size = 1.5 + Math.random() * 2.5;
-          corazon.style.fontSize = `${size}rem`;
-
-          // posición horizontal aleatoria
-          const left = 5 + Math.random() * 90;
-          corazon.style.left = `${left}%`;
-          corazon.style.top = `${60 + Math.random() * 35}%`;
-
-          // duración aleatoria
-          const duracion = 3 + Math.random() * 3;
-          corazon.style.animationDuration = `${duracion}s`;
-
-          // rotación inicial
-          const rotacion = Math.random() * 40 - 20;
-          corazon.style.transform = `rotate(${rotacion}deg)`;
-
-          container.appendChild(corazon);
-
-          setTimeout(() => {
-            if (corazon.parentNode) corazon.remove();
-          }, duracion * 1000 + 200);
-        }
-      }
-
-      // función para aumentar contador con efecto bonito
-      function aumentarContador() {
-        contador += 1;
-        contadorSpan.textContent = contador;
-
-        // efecto de "latido"
-        contadorSpan.style.transition = 'transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55)';
-        contadorSpan.style.transform = 'scale(1.8)';
-        setTimeout(() => {
-          contadorSpan.style.transform = 'scale(1)';
-        }, 250);
-
-        // lanzar corazones extra
-        lanzarCorazones(12 + Math.floor(Math.random() * 10));
-      }
-
-      // evento del botón
-      boton.addEventListener('click', function(e) {
-        e.stopPropagation();
-        
-        // efecto de presión
-        this.style.transform = 'scale(0.92)';
-        setTimeout(() => {
-          this.style.transform = '';
-        }, 200);
-
-        aumentarContador();
-        lanzarCorazones(10 + Math.floor(Math.random() * 12));
-      });
-
-      // clic en la tarjeta también lanza corazones (pero sin aumentar contador)
-      const card = document.querySelector('.card');
-      card.addEventListener('click', function(e) {
-        if (e.target.closest('#botonCorazon')) return;
-        if (e.target.closest('.plan-item')) {
-          // si hace click en un plan, lanza muchos corazones
-          lanzarCorazones(20);
-          return;
-        }
-        lanzarCorazones(8 + Math.floor(Math.random() * 10));
-      });
-
-      // clic en los planes también
-      document.querySelectorAll('.plan-item').forEach(item => {
-        item.addEventListener('click', function(e) {
-          e.stopPropagation();
-          lanzarCorazones(18 + Math.floor(Math.random() * 12));
-          // cambio sutil de color
-          this.style.transition = 'background 0.3s';
-          this.style.background = 'rgba(255, 200, 215, 0.6)';
-          setTimeout(() => {
-            this.style.background = '';
-          }, 400);
-        });
-      });
-
-      // corazones al cargar
-      window.addEventListener('load', function() {
-        setTimeout(() => {
-          lanzarCorazones(15);
-          setTimeout(() => lanzarCorazones(12), 600);
-        }, 400);
-      });
-
-      // cada 12 segundos, una lluvia suave (si la página está visible)
-      setInterval(() => {
-        if (!document.hidden) {
-          lanzarCorazones(5 + Math.floor(Math.random() * 8));
-        }
-      }, 12000);
-
-      // efecto extra: al pasar el mouse por los planes
-      document.querySelectorAll('.plan-item').forEach(item => {
-        item.addEventListener('mouseenter', function() {
-          // pequeño corazón que aparece
-          const miniCorazon = document.createElement('div');
-          miniCorazon.className = 'corazoncito';
-          miniCorazon.textContent = '💗';
-          miniCorazon.style.fontSize = '1.5rem';
-          miniCorazon.style.left = (Math.random() * 80 + 10) + '%';
-          miniCorazon.style.top = (Math.random() * 60 + 20) + '%';
-          miniCorazon.style.animationDuration = '2.5s';
-          container.appendChild(miniCorazon);
-          setTimeout(() => {
-            if (miniCorazon.parentNode) miniCorazon.remove();
-          }, 2800);
-        });
-      });
-
-    })();
-  </script>
 </body>
 </html>
